@@ -28,7 +28,7 @@ function _parseHTML(html, cb) {
 }
 
 function _parseURL(filename, interPath) {
-    var host = 'https://mhcdn.manhuazj.com';
+    var host = 'https://mhimg.eshanyao.com';
     if (filename.match(/^https?:\/\/(images.dmzj.com|imgsmall.dmzj.com)/i)) return 'http://222.186.43.94/showImage.php?url='+encodeURI(filename);
     if (filename.match(/^[a-z]\//i)) return 'http://222.186.43.94/showImage.php?url='+encodeURI("https://images.dmzj.com/"+filename);
     if (filename.match(/^(http:|https:|ftp:|^)\/\//i)) return filename;

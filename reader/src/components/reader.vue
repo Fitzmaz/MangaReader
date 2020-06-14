@@ -12,6 +12,7 @@
 </template>
 
 <script>
+const serverURL = "http://10.0.0.15:8080";
 const axios = require("axios");
 export default {
   name: "HelloWorld",
@@ -27,7 +28,7 @@ export default {
   },
   computed: {
     src() {
-      return `http://10.0.0.3:8080/manga?comicID=${this.comicID}&chapterID=${this.chapterID}&page=${this.page}`;
+      return `${serverURL}/manga?comicID=${this.comicID}&chapterID=${this.chapterID}&page=${this.page}`;
     }
   },
   watch: {
@@ -63,7 +64,7 @@ export default {
       console.log('request ' + url);
       var that = this;
       axios
-        .get(url, { baseURL: 'http://10.0.0.3:8080'})
+        .get(url, { baseURL: serverURL})
         .then(function(response) {
           that.pageCount = response.data.urls.length;
           that.prev = response.data.prev;
